@@ -1,0 +1,80 @@
+# description: NGKQA-14733 - The "Recents and Faves" menu will be displayed in the left navigation menu when the parameter "rememberMe.enabled" is true [Full Experience]
+# actors:
+#   - actor: ACTOR1
+#     segments:
+#       - segment: 1
+#         actions:
+#           - description: openBrowser
+#             action: org.getopentest.selenium.NavigateTo
+#             args:
+#               url: http://localhost:8123/npsharp/kiosk/pos0025/
+
+#           - script: $delay(40000)
+
+#           - description: click at order start button
+#             action: org.getopentest.selenium.Click
+#             args: 
+#               locator: {xpath: ".//div[@class='start-order']"}
+
+#           - description: click at no thanks button
+#             action: org.getopentest.selenium.Click
+#             args: 
+#               locator: {xpath: "//span[contains(.,'No Thanks')]"}
+
+#           - description: click at eat in button
+#             action: org.getopentest.selenium.Click
+#             args: 
+#               locator: {xpath: "//span[contains(.,'Eat In')]"}
+         
+#           - description: click at payment at counter button
+#             action: org.getopentest.selenium.Click
+#             args: 
+#               locator: {xpath: "//b[contains(.,'Pay at counter')]"}
+      
+#           - description: Verify if the "Recents & Faves" menu is visible
+#             action: org.getopentest.selenium.AssertElementVisible
+#             args:
+#               locator: {xpath: "//span[contains(.,'Recents & Faves')]"}      
+
+description: NGKQA-14739 - The "Recents and Faves" menu will be displayed in the left navigation menu when the parameter "rememberMe.enabled" is true [Reach Mode]
+actors:
+  - actor: ACTOR1
+    segments:
+      - segment: 1
+        actions:
+          - description: openBrowser
+            action: org.getopentest.selenium.NavigateTo
+            args:
+              url: http://localhost:8123/npsharp/kiosk/pos0025/
+
+          - script: $delay(20000)
+
+          - description: click at "Accessibility" button
+            action: org.getopentest.selenium.Click
+            args: 
+              locator: {xpath: "//span[contains(.,'Accessibility')]"}
+
+          - description: click at "No thanks" button
+            action: org.getopentest.selenium.Click
+            args: 
+              locator: {xpath: "//span[contains(.,'No Thanks')]"}
+
+          - description: click at "Eat In" button
+            action: org.getopentest.selenium.Click
+            args: 
+              locator: {xpath: "//span[contains(.,'Eat In')]"}
+         
+          - description: click at "Pay at counter" button
+            action: org.getopentest.selenium.Click
+            args: 
+              locator: {xpath: "//b[contains(.,'Pay at counter')]"}
+
+          - description: click at "Menu" button
+            action: org.getopentest.selenium.Click
+            args: 
+              locator: {css: ".reachmode-category-menu > .media"}            
+      
+          - description: Verify if the "Recents & Faves" menu is visible
+            action: org.getopentest.selenium.AssertElementVisible
+            args:
+              locator: {xpath: "//span[contains(.,'Recents & Faves')]"}                      
